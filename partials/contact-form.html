@@ -1,0 +1,56 @@
+<md-content flex layout-padding class="md-hue-1">
+
+	<md-card main-padding>
+
+		<div id="contact-area" layout="column" ng-cloak class="md-inline-form">
+
+			<form name="contactform" ng-submit="contactform.$valid && submitFormAjax()" ng-controller="MailControllerAjax" novalidate>
+			<!-- data-ng-submit="frmRegister.$valid && frmRegister.$dirty ? register() : return false;" -->
+				
+				<md-content layout-padding  style="overflow: hidden;">
+
+				  <div id="success-toast"></div>
+				  
+				  <h3 class="md-display-0">Send me a message</h3>
+
+				  <md-input-container>
+				      <label for="name">Name</label>
+				      <input type="text" name="name" ng-model="formData.name" ng-class="{'error' : errorName}" required>
+				      <span ng-message class="help-block" ng-show="errorName">{{ errorName }}</span>
+			      </md-input-container>
+				  
+				  <md-input-container>
+					  <label for="email">E-mail</label>
+					  <input type="email" name="email" ng-model="formData.email" ng-class="{'error' : errorEmail}" required>
+					  <span ng-message class="help-block" ng-show="errorName">{{ errorEmail }}</span>
+				  </md-input-container>
+
+				  <md-input-container>
+					  <label for="message">Message</label>
+					  <textarea name="message" ng-class="{'error' : errorTextarea}" ng-model="formData.message" style="min-height: 130px;" required></textarea>
+					  <span ng-message class="help-block" ng-show="errorName">{{ errorMessage }}</span>
+				  </md-input-container>
+
+				  <!-- Honeypot 
+				  <md-input-container class="robotic" id="pot">
+				      <label>If you're human leave this blank:</label>
+				      <input type="text" name="robotest" ng-model="formData.robotest" ng-class="{'error' : errorRobotest}" />
+				      <span class="help-block" ng-show="errorRobotest">{{ errorMessage }}</span>
+				  </md-input-container>
+				   -->
+					
+				  <div layout="row" layout-sm="column" id="form-message">
+						<md-button class="md-raised md-primary" name="submit" ng-disable="contactform.$invalid || !contactform.$dirty">Send</md-button>
+					</div>
+					<!-- <p ng-class="{'submissionMessage' : submission}" ng-bind="submissionMessage"><p> -->
+				</md-content>
+
+			</form>
+
+		</div>
+
+	</md-card>
+
+
+
+</md-content>

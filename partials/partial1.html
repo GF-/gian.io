@@ -1,0 +1,149 @@
+
+		<md-toolbar>
+	      <div class="md-toolbar-tools">
+	        <md-button class="md-icon-button toggle-navbar" hide-gt-md ng-click="toggleLeft()" aria-label="Menu">
+	          	<ng-md-icon icon="menu" style="fill: white" size="24"></ng-md-icon>
+	        </md-button>
+	        <span flex></span>
+<!-- 	        <div layout="row" ng-click="go('/contact')" md-ink-ripple class="mail">
+	        	<p>Contact me</p>
+		        <md-button class="md-icon-button" aria-label="Contact">
+		          <md-icon>
+		    		<ng-md-icon icon="mail" style="fill: white" size="24"></ng-md-icon>
+		    	  </md-icon>
+		        </md-button>
+		    </div> -->
+
+		    <md-list ng-controller="SidenavList" ng-cloak layout="row">
+			  <md-list-item ng-class="{ active: isActive('/contact') }" class="contact">
+				<p>Share</p>
+				<md-button class="social facebook" aria-label="Share on Facebook"
+					socialshare
+					socialshare-provider="facebook"
+					socialshare-text="720kb is enough!">
+					<ng-md-icon icon="facebook" style="fill: #fafafa" size="24"></ng-md-icon>
+				</md-button>
+				<md-button class="social twitter" aria-label="Share on Twitter"
+					socialshare
+					socialshare-provider="twitter"
+					socialshare-text="720kb is enough!">
+					<ng-md-icon icon="twitter" style="fill: #fafafa" size="24"></ng-md-icon>
+				</md-button>
+			  </md-list-item>
+
+			    <md-list-item ng-click="go('/contact')" ng-class="{ active: isActive('/contact') }" class="contact">
+				<p>Contact me</p>
+				<md-icon>
+		    		<ng-md-icon icon="mail" style="fill: #fafafa" size="24"></ng-md-icon>
+		    	</md-icon>
+			  </md-list-item>
+			</md-list>
+
+	      </div>
+	    </md-toolbar>
+
+
+<md-content flex main-text-padding class="md-hue-1">
+
+	<header md-page-header>
+		<div md-header-picture style="background-image:url(http://www.wall321.com/thumbnails/detail/20120514/clouds%20roads%20skyscapes%201366x768%20wallpaper_www.wall321.com_4.jpg)">		    
+		    <h1 class="md-display-2">Solving business problems through design</h1>
+		</div>
+	</header>
+
+	
+
+	<div layout="row" flex layout-align="center center">
+  		<div layout="column" layout-align="center center" flex="50" class="align-center">
+			<h2 class="md-display-2 no-margin-bottom">Headline</h2>
+			<h4>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</h4>
+
+		</div>
+	</div>
+
+	<div layout="row" layout-sm="column" layout-align="center center">
+	  <div flex class="align-center" layout-padding layout-margin>
+		
+			<img src="https://www.gladeox.org/Admin/Career_images/UX-icon-grey1.gif" alt="" style="width: 5rem;" />
+			<h3 class="md-display-1 no-margin-top no-margin-bottom">UX</h3>
+			<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+		
+	  </div>
+	  <div flex class="align-center" layout-padding layout-margin>
+		
+			<img src="https://www.gladeox.org/Admin/Career_images/UX-icon-grey1.gif" alt="" style="width: 5rem;" />
+			<h3 class="md-display-1 no-margin-top no-margin-bottom">UX</h3>
+			<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+		
+	  </div>
+	  <div flex class="align-center" layout-padding layout-margin>
+		
+			<img src="https://www.gladeox.org/Admin/Career_images/UX-icon-grey1.gif" alt="" style="width: 5rem;" />
+			<h3 class="md-display-1 no-margin-top no-margin-bottom">UX</h3>
+			<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+		
+	  </div>
+<div layout="row" flex layout-align="center center">
+  		<div layout="column" layout-align="center center" flex="50" class="align-center">
+			<h2 class="md-display-2 no-margin-bottom">Headline</h2>
+			<h4>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</h4>
+
+		</div>
+	</div>
+
+	<div layout="row" layout-sm="column" layout-align="center center">
+	  <div flex class="align-center" layout-padding layout-margin>
+		
+			<img src="https://www.gladeox.org/Admin/Career_images/UX-icon-grey1.gif" alt="" style="width: 5rem;" />
+			<h3 class="md-display-1 no-margin-top no-margin-bottom">UX</h3>
+			<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+		
+	  </div>
+	  <div flex class="align-center" layout-padding layout-margin>
+		
+			<img src="https://www.gladeox.org/Admin/Career_images/UX-icon-grey1.gif" alt="" style="width: 5rem;" />
+			<h3 class="md-display-1 no-margin-top no-margin-bottom">UX</h3>
+			<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+		
+	  </div>
+	  <div flex class="align-center" layout-padding layout-margin>
+		
+			<img src="https://www.gladeox.org/Admin/Career_images/UX-icon-grey1.gif" alt="" style="width: 5rem;" />
+			<h3 class="md-display-1 no-margin-top no-margin-bottom">UX</h3>
+			<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+		
+	  </div>
+<div layout="row" flex layout-align="center center">
+  		<div layout="column" layout-align="center center" flex="50" class="align-center">
+			<h2 class="md-display-2 no-margin-bottom">Headline</h2>
+			<h4>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</h4>
+
+		</div>
+	</div>
+
+	<div layout="row" layout-sm="column" layout-align="center center">
+	  <div flex class="align-center" layout-padding layout-margin>
+		
+			<img src="https://www.gladeox.org/Admin/Career_images/UX-icon-grey1.gif" alt="" style="width: 5rem;" />
+			<h3 class="md-display-1 no-margin-top no-margin-bottom">UX</h3>
+			<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+		
+	  </div>
+	  <div flex class="align-center" layout-padding layout-margin>
+		
+			<img src="https://www.gladeox.org/Admin/Career_images/UX-icon-grey1.gif" alt="" style="width: 5rem;" />
+			<h3 class="md-display-1 no-margin-top no-margin-bottom">UX</h3>
+			<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+		
+	  </div>
+	  <div flex class="align-center" layout-padding layout-margin>
+		
+			<img src="https://www.gladeox.org/Admin/Career_images/UX-icon-grey1.gif" alt="" style="width: 5rem;" />
+			<h3 class="md-display-1 no-margin-top no-margin-bottom">UX</h3>
+			<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+		
+	  </div>
+
+</md-content>
+
+

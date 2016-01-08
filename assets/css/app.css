@@ -1,0 +1,596 @@
+/* Table of Content
+==================================================
+  1. Basic
+  2. Typography
+  3. Layout
+  4. Custom
+  5. Breakpoints
+================================================== */
+
+
+
+/* Basic 
+================================================== */
+
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+/*
+ *
+ * maxvoltar.com/archive/-webkit-font-smoothing
+ *
+ */
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: rgb(52,158,219);
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/*
+ *
+ * Selection
+ *
+ */
+::-webkit-selection {
+  background: rgb(0,0,0);
+  color: rgb(255,255,255);
+  text-shadow: none;
+}
+::-moz-selection {
+  background: rgb(0,0,0);
+  color: rgb(255,255,255);
+  text-shadow: none;
+}
+::selection {
+  background: rgb(0,0,0);
+  color: rgb(255,255,255);
+  text-shadow: none;
+}
+
+
+/* Common classes */
+
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+.no-margin-top {
+  margin-top: 0;
+}
+
+
+
+/* Typography 
+================================================== */
+
+
+
+/* Header */
+
+header h1 {
+  position: absolute;
+  left: 3.5rem;
+  bottom: 1rem;
+  color: white;
+  opacity: .9;
+}
+
+/* Main */
+
+md-card a {
+  color: #222;
+  text-decoration: none;
+}
+
+md-card.full img {
+  margin-left: -24px;
+  max-width: calc(100% + 48px);
+}
+
+/* Forms */
+
+  /* Input labels */
+  form label {
+    color: #999;
+  }
+
+  /* Input pristing*/
+  input.ng-pristine,
+  textarea.ng-pristine {
+      border-color: rgba(0,0,0,0.12) !important;
+  }
+
+  /* Form messages */
+  /*[ng-message] {
+    color: #cc0000;
+  }*/
+
+  /* honeypot */
+  form .robotic {
+    position: absolute;
+    right: -1000000px;
+    top: -100000px;
+  }
+
+  /* Toast colors */
+  /* Little trick as this feature is not implemented in mdToast */
+  md-toast {
+    background: #cc0000 !important;
+  }
+
+  #success-toast md-toast {
+    background: green !important;
+  }
+
+
+/* Sharing buttons */
+
+button.social {
+  padding-top: .4rem;
+  min-width: 20px;
+}
+  button.social.twitter {
+    margin: 0;
+  }
+
+  /* Facebook 
+  button.facebook {
+    background: #3b5998 !important;
+  } */
+
+  /* Twitter 
+  button.twitter {
+    background: #4099FF !important;
+  } */
+
+
+/* Layout 
+================================================== */
+
+html,
+body {
+  background-color: #eaeaea; 
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  } /* defining this in CSS as responsive layout still buggy in Angular Material (Dec 2015) */
+
+  header {
+    order: 1;
+  }
+  main {
+    order: 2;
+  }
+
+
+/* SideNav */
+
+  md-sidenav,
+  md-sidenav md-content {
+    background: #eaeaea;
+  }
+
+  /* Avatar */
+  .md-avatar {
+    padding: .5rem;
+    width: 5rem;
+    height: 5rem;
+  }
+
+  md-sidenav header h2 {
+    margin: .3rem 0;
+  }
+
+  md-sidenav header p {
+    margin: .1rem 0;
+  }
+
+
+/* Main */
+
+  /* Header cover picture */
+  
+  [ng-view] [md-header-picture] {
+    position: relative;
+    width:100%;
+    height:0; /* Simple trick to keep a 16:9 ratio on your background image (height=0;padding-bottom=56.25%) */
+    padding-bottom: 46.25%; /*prev 56.25%*/
+    overflow:hidden;
+    background-size:160%; /* You can override this value if your picture has a weird ratio */
+    background-position:50% 50%;
+  }
+
+  /* Grid */
+  md-grid-list md-card {
+    overflow: hidden;
+  }
+
+  md-grid-tile md-card img {
+     object-fit: cover;
+     overflow: hidden;
+  }
+
+  /* Toolbar */
+
+  main md-toolbar {
+    /*background-color: transparent !important;*/
+  }
+    
+    /* Button Contact me */
+    main md-toolbar .contact {
+      position: relative; /* for md-ink-ripple */
+      margin-right: 2rem;
+      cursor: pointer
+    }
+    main md-toolbar md-list-item.active p {
+      color: #fafafa !important;
+      font-weight: normal !important;
+      text-decoration: underline;
+    }
+       main md-toolbar md-list-item button:hover {
+         background: rgba(63,81,181,.1) !important;
+       }
+    main md-toolbar .contact md-icon {
+      top: 0;
+      left: .5rem;
+    }
+
+  /* Negative margin */
+  .negative-margin {
+    margin-top: -64px;
+  } /*md uses flex which allows the toolbar to stay on the top without being positione as 'fixed'. Clever. This class is for main > md-content to show right behind the (transparent) toolbar; so not to involve fixed positioning (it often junps on IE and mobile and ipads..)*/
+  
+  /* Social buttons - position */
+
+  main md-toolbar .social-buttons {
+    position: absolute !important;
+    right: 2rem;
+    top: 9rem;
+  }
+
+
+/* Custom 
+================================================== */
+
+[md-header-picture] {
+    position: relative;
+    width:100%;
+    height:0; /* Simple trick to keep a 16:9 ratio on your background image (height=0;padding-bottom=56.25%) */
+    padding-bottom: 56.25%;
+    overflow:hidden;
+    background-size:160%; /* You can override this value if your picture has a weird ratio */
+    background-position:50% 50%;
+}
+
+/* Animations 
+================================================== */
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+/*  opacity: 0;
+  -webkit-transition: 0.5s ease-in-out opacity;
+  -moz-transition: 0.5s ease-in-out opacity;
+  -o-transition: 0.5s ease-in-out opacity;
+  transition: 0.5s ease-in-out opacity;*/
+}
+
+
+
+[ng-view] {}
+
+.ng-enter,
+.ng-leave {
+   -webkit-transform: translateZ(0);
+   -moz-transform: translateZ(0);
+   -ms-transform: translateZ(0);
+   -o-transform: translateZ(0);
+   transform: translateZ(0);
+
+  -webkit-backface-visibility: hidden;
+   -moz-backface-visibility: hidden;
+   -ms-backface-visibility: hidden;
+   backface-visibility: hidden;
+
+   -webkit-perspective: 1000;
+   -moz-perspective: 1000;
+   -ms-perspective: 1000;
+   perspective: 1000;
+}
+
+
+
+[ng-view].ng-enter,
+[ng-view].ng-leave {
+  -webkit-transition: .8s ease-in-out opacity;
+  -moz-transition: .8s ease-in-out opacity;
+  -o-transition: .8s ease-in-out opacity;
+  transition: .8s ease-in-out opacity;
+  /*width: 100%;*/ /* Important to avoid jumps */
+}
+
+[ng-view].ng-enter {
+  opacity: 0;
+}
+[ng-view].ng-enter.ng-enter-active {
+  opacity: 1;
+  transition-delay: .5s; /*This makes sure that the transition of [ng-view] does not impact the animation on the cards. Fact is, I'm animating the <md-cards> nested into [ng-view]. The duration of the animation has to be set for [ng-view]. */
+}
+[ng-view].ng-leave {
+  opacity: 1;
+}
+[ng-view].ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+[ng-view] {
+  
+}
+
+
+/* CARDS */
+
+
+@-webkit-keyframes zoomOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes zoomOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+
+
+[ng-view] md-grid-tile {}
+
+.ng-enter md-grid-tile,
+.ng-leave md-grid-tile {
+   -webkit-transform: translateZ(0);
+   -moz-transform: translateZ(0);
+   -ms-transform: translateZ(0);
+   -o-transform: translateZ(0);
+   transform: translateZ(0);
+
+  -webkit-backface-visibility: hidden;
+   -moz-backface-visibility: hidden;
+   -ms-backface-visibility: hidden;
+   backface-visibility: hidden;
+
+   -webkit-perspective: 1000;
+   -moz-perspective: 1000;
+   -ms-perspective: 1000;
+   perspective: 1000;
+
+    position: absolute;
+    width: 100%; /* dirty fix to avoid jumping. Not sure how Angular Material deals with that*/
+}
+
+[ng-view].ng-enter md-grid-tile,
+[ng-view].ng-enter md-card.full {
+  /*opacity: 0;*/
+}
+[ng-view].ng-enter.ng-enter-active md-grid-tile,
+[ng-view].ng-enter.ng-enter-active md-card.full {
+  /*opacity: 1;*/
+  -webkit-animation: zoomIn .75s;
+  animation: zoomIn .75s;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+[ng-view].ng-leave md-grid-tile {
+  /*opacity: 1;*/
+}
+[ng-view].ng-leave.ng-leave-active md-grid-tile,
+[ng-view].ng-leave.ng-leave-active md-card.full {
+  /*opacity: 0;*/
+  -webkit-animation: zoomOut .75s;
+  animation: zoomOut .75s;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+
+[ng-view].ng-enter.ng-enter-active md-grid-tile:nth-child(6),
+[ng-view].ng-leave.ng-leave-active md-grid-tile:nth-child(6) {  
+  -webkit-animation-delay: 0.1s !important;
+  animation-delay: 0.1s !important;
+}
+
+[ng-view].ng-enter.ng-enter-active md-grid-tile:nth-child(5),
+[ng-view].ng-leave.ng-leave-active md-grid-tile:nth-child(5) {  
+  -webkit-animation-delay: 0.2s !important;
+  animation-delay: 0.2s !important;
+}
+
+[ng-view].ng-enter.ng-enter-active md-grid-tile:nth-child(4),
+[ng-view].ng-leave.ng-leave-active md-grid-tile:nth-child(4) {  
+  -webkit-animation-delay: 0.3s !important;
+  animation-delay: 0.3s !important;
+}
+
+[ng-view].ng-enter.ng-enter-active md-grid-tile:nth-child(2),
+[ng-view].ng-leave.ng-leave-active md-grid-tile:nth-child(2) {  
+  -webkit-animation-delay: 0.3s !important;
+  animation-delay: 0.3s !important;
+}
+
+
+/* This is to delay bricks.. in CSS -> Staggering by Angular does not apply on the ng-repeat #isotope. Don't to this at home 
+[ui-view].ng-enter-active md-list-grid:nth-child(1) {  
+  -webkit-transition-delay:0.1s !important;
+  transition-delay:0.1s !important;
+}
+[ui-view].ng-enter-active md-list-grid:nth-child(2) {  
+  -webkit-transition-delay:0.2s !important;
+  transition-delay:0.2s !important;
+}
+[ui-view].ng-enter-active md-list-grid:nth-child(3) {  
+  -webkit-transition-delay:0.26s !important;
+  transition-delay: 0.26s !important;
+}
+[ui-view].ng-enter-active md-list-grid:nth-child(4) {  
+  -webkit-transition-delay:0.3s !important;
+  transition-delay: 0.3s !important;
+}
+[ui-view].ng-enter-active md-list-grid:nth-child(5) {  
+  -webkit-transition-delay:0.33s !important;
+  transition-delay: 0.33s !important;
+}
+[ui-view].ng-enter-active md-list-grid:nth-child(6) {  
+  -webkit-transition-delay:0.32s !important;
+  transition-delay: 0.32s !important;
+}
+[ui-view].ng-enter-active md-list-grid:nth-child(7) {  
+  -webkit-transition-delay:0.3s !important;
+  transition-delay: 0.3s !important;
+}
+[ui-view].ng-enter-active md-list-grid:nth-child(8) {  
+  -webkit-transition-delay:0.3s !important;
+  transition-delay: 0.3s !important;
+}
+[ui-view].ng-enter-active md-list-grid:nth-child(9) {  
+  -webkit-transition-delay:0.3s !important;
+  transition-delay: 0.3s !important;
+}
+[ui-view].ng-enter-active md-list-grid:nth-child(10) {  
+  -webkit-transition-delay:0.3s !important;
+  transition-delay: 0.3s !important;
+}
+
+*/
+
+
+
+
+
+/* Breakpoints
+================================================== */
+
+
+/* ===== == = === 15em (240px) === = == ===== */
+
+@media only screen and (min-width : 15em) {}
+
+/* ===== == = === 20em (320px) === = == ===== */
+
+@media only screen and (min-width : 20em) {}
+
+/* ===== == = === 30em (480px) === = == ===== */
+
+@media only screen and (min-width : 30em) {}
+
+
+/* ===== == = === 37.5em (600px) === = == ===== */
+
+@media only screen and (min-width: 37.5em) {}
+
+/* ===== == = === 62.5em (960px) === = == ===== */
+
+@media only screen and (min-width : 60em) {}
+
+/* ===== == = === 62.5em (1000px) === = == ===== */
+
+@media only screen and (min-width : 62.5em) {
+
+.wrapper {
+  flex-direction: row;
+  } /* defining this in CSS as responsive layout still buggy in Angular Material (Dec 2015) */
+
+  header {
+    order: 1;
+    position: absolute;
+    left: 70%;
+  }
+  main {
+    order: 2;
+    position: absolute;
+    left: 0;
+    width: 60%;
+    max-width: 60% !important;
+  }
+
+}
+
+
+/* ===== == = === 75em (1200px) === = == ===== */
+
+@media only screen and (min-width : 75em) {
+
+  header {
+    left: 60%;
+  }
+
+  main {
+    left: 10%;
+    width: 50%;
+    max-width: 50%;
+  }
+
+}
+
+/* ===== == = === 81.25em (1300px) === = == ===== */
+
+@media only screen and (min-width : 81.25em) {}
+
+/* ===== == = === 100em (1600px) === = == ===== */
+
+@media only screen and (min-width : 100em) {}
+

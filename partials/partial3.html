@@ -1,0 +1,167 @@
+<a ng-href="#/">Close</a>
+
+<md-content layout-padding="">
+
+	<div layout="row" layout-xs="column">
+
+		<div flex hide-xs>
+
+			<md-grid-list md-cols-gt-md="4" md-cols-sm="2" md-cols-md="4" md-row-height-gt-md="1:1" md-row-height="4:3" md-gutter-gt-md="1rem" md-gutter-gt-sm="8px" md-gutter="4px">
+		      
+		      <md-grid-tile md-colspan-gt-sm="2" md-rowspan-gt-sm="2" md-colspan-sm="2">
+
+			       <md-card>
+			        <md-card-title>
+			          <md-card-title-text>
+			            <span class="md-headline">Card with  image</span>
+			            <span class="md-subhead">Extra Large</span>
+			          </md-card-title-text>
+			        </md-card-title>
+			        <md-card-content layout="row" layout-align="space-between">
+			          <div class="md-media-xl card-media">
+			          	  
+			          	  <ul>
+							<li ng-repeat="post in posts">
+						      <p>{[{post.title}]}</p>
+						      <p>{[{post.id}]}</p>
+						      <p><a href="#/posts/{[{post.slug}]}">link</a></p>
+						    </li>
+						  </ul>
+
+
+			          </div>
+			          <md-card-actions layout="column">
+			            <md-button class="md-icon-button" aria-label="Favorite">
+			              <md-icon md-svg-icon="img/icons/favorite.svg">action</md-icon>
+			            </md-button>
+			            <md-button class="md-icon-button" aria-label="Settings">
+			              <md-icon md-svg-icon="img/icons/menu.svg">action</md-icon>
+			            </md-button>
+			            <md-button class="md-icon-button" aria-label="Share">
+			              <md-icon md-svg-icon="img/icons/share-arrow.svg">action</md-icon>
+			            </md-button>
+			          </md-card-actions>
+			        </md-card-content>
+			      </md-card>
+
+		      </md-grid-tile>
+		      <md-grid-tile md-colspan-gt-sm="2" md-rowspan-gt-sm="2">
+
+			       <md-card>
+			        <md-card-title>
+			          <md-card-title-text>
+			            <span class="md-headline">Card with  image</span>
+			            <span class="md-subhead">Extra Large</span>
+			          </md-card-title-text>
+			        </md-card-title>
+			        <md-card-content layout="row" layout-align="space-between">
+			          <div class="md-media-xl card-media"></div>
+			          <md-card-actions layout="column">
+			            <md-button class="md-icon-button" aria-label="Favorite">
+			              <md-icon md-svg-icon="img/icons/favorite.svg">action</md-icon>
+			            </md-button>
+			            <md-button class="md-icon-button" aria-label="Settings">
+			              <md-icon md-svg-icon="img/icons/menu.svg">action</md-icon>
+			            </md-button>
+			            <md-button class="md-icon-button" aria-label="Share">
+			              <md-icon md-svg-icon="img/icons/share-arrow.svg">action</md-icon>
+			            </md-button>
+			          </md-card-actions>
+			        </md-card-content>
+			      </md-card>
+
+		      </md-grid-tile>
+		      <md-grid-tile style="background: violet;" md-colspan-gt-sm="2" md-rowspan-gt-sm="2">
+
+			       <md-card>
+			        <md-card-title>
+			          <md-card-title-text>
+			            <span class="md-headline">Card with  image</span>
+			            <span class="md-subhead">Extra Large</span>
+			          </md-card-title-text>
+			        </md-card-title>
+			        <md-card-content layout="row" layout-align="space-between">
+			          <div class="md-media-xl card-media"></div>
+			          <md-card-actions layout="column">
+			            <md-button class="md-icon-button" aria-label="Favorite">
+			              <md-icon md-svg-icon="img/icons/favorite.svg">action</md-icon>
+			            </md-button>
+			            <md-button class="md-icon-button" aria-label="Settings">
+			              <md-icon md-svg-icon="img/icons/menu.svg">action</md-icon>
+			            </md-button>
+			            <md-button class="md-icon-button" aria-label="Share">
+			              <md-icon md-svg-icon="img/icons/share-arrow.svg">action</md-icon>
+			            </md-button>
+			          </md-card-actions>
+			        </md-card-content>
+			      </md-card>
+
+		      </md-grid-tile>
+		      <md-grid-tile style="background: orange;" md-colspan-gt-sm="1" md-rowspan-gt-sm="1">
+
+
+			       <md-card>
+			        <md-card-title>
+			          <md-card-title-text>
+			            <span class="md-headline">Card with  image</span>
+			            <span class="md-subhead">Extra Large</span>
+			          </md-card-title-text>
+			        </md-card-title>
+			        <md-card-content layout="row" layout-align="space-between">
+			          <div class="md-media-xl card-media"></div>
+			          <md-card-actions layout="column">
+			            <md-button class="md-icon-button" aria-label="Favorite">
+			              <md-icon md-svg-icon="img/icons/favorite.svg">action</md-icon>
+			            </md-button>
+			            <md-button class="md-icon-button" aria-label="Settings">
+			              <md-icon md-svg-icon="img/icons/menu.svg">action</md-icon>
+			            </md-button>
+			            <md-button class="md-icon-button" aria-label="Share">
+			              <md-icon md-svg-icon="img/icons/share-arrow.svg">action</md-icon>
+			            </md-button>
+			          </md-card-actions>
+			        </md-card-content>
+			      </md-card>
+
+		      </md-grid-tile>
+
+		      <md-grid-tile style="background: blue;" md-colspan-gt-sm="1" md-rowspan-gt-sm="1">
+
+			       <md-card>
+			        <md-card-title>
+			          <md-card-title-text>
+			            <span class="md-headline">Card with  image</span>
+			            <span class="md-subhead">Extra Large</span>
+			          </md-card-title-text>
+			        </md-card-title>
+			        <md-card-content layout="row" layout-align="space-between">
+			          <div class="md-media-xl card-media"></div>
+			          <md-card-actions layout="column">
+			            <md-button class="md-icon-button" aria-label="Favorite">
+			              <md-icon md-svg-icon="img/icons/favorite.svg">action</md-icon>
+			            </md-button>
+			            <md-button class="md-icon-button" aria-label="Settings">
+			              <md-icon md-svg-icon="img/icons/menu.svg">action</md-icon>
+			            </md-button>
+			            <md-button class="md-icon-button" aria-label="Share">
+			              <md-icon md-svg-icon="img/icons/share-arrow.svg">action</md-icon>
+			            </md-button>
+			          </md-card-actions>
+			        </md-card-content>
+			      </md-card>
+
+		      </md-grid-tile>
+		      <md-grid-tile style="background: violet;" md-colspan-gt-sm="2" md-rowspan-gt-sm="2">6rd</md-grid-tile>
+		      <md-grid-tile style="background: orange;" md-colspan-gt-sm="1" md-rowspan-gt-sm="1">7th</md-grid-tile>
+		      <md-grid-tile style="background: blue;" md-colspan-gt-sm="1" md-rowspan-gt-sm="1">8th</md-grid-tile>
+		    </md-grid-list>
+
+    	</div>
+
+	    <div flex>
+	    	column
+	    </div>
+
+    </div>
+
+  </md-content>

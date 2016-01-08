@@ -1,0 +1,41 @@
+<md-grid-list md-cols-gt-md="3" md-cols-sm="2" md-cols-md="3" md-row-height-gt-md="1:1" md-row-height="4:3" md-gutter-gt-md="1rem" md-gutter-gt-sm="8px" md-gutter="4px">
+                        
+<!-- Big card
+<md-grid-tile md-colspan-gt-sm="2" md-rowspan-gt-sm="2" md-colspan-sm="2">
+-->
+<!-- Small card
+<md-grid-tile md-colspan-gt-sm="1" md-rowspan-gt-sm="1">
+-->
+
+<!--     <md-grid-tile ng-repeat="post in posts" ng-attr-md-colspan-gt-sm="{[{ post.featured ? '2' : '1' }]}" ng-attr-md-rowspan-gt-sm="{[{ post.featured ? '2' : '1' }]}" ng-attr-md-colspan-sm="{[{ post.featured ? '2' : '1' }]}" ng-cloak=""> -->
+
+    <md-grid-tile ng-repeat="post in posts" ng-attr-md-colspan-gt-sm="{[{ post.featured ? '2' : '1' }]}" ng-attr-md-rowspan="{[{ post.featured ? '2.5' : '1' }]}" ng-attr-md-colspan-sm="{[{ post.featured ? '2' : '1' }]}" ng-cloak="">
+
+       
+       <md-card layout-fill>
+      
+          <a href="#/posts{[{post.url}]}">
+		        <md-card-header>
+              <md-card-header-text>
+          			<!-- <md-card-title>
+          	          <md-card-title-text> -->
+	                     <span class="md-headline">{[{post.title}]}</span>
+        	          <!-- </md-card-title-text>
+        	        </md-card-title> -->
+              </md-card-header-text>
+            </md-card-header>
+            <div class="md-media-xl card-media">
+        	   <img ng-show="post.image" ng-src="{[{post.image}]}" class="md-card-image" alt="Washed Out">
+            </div>
+
+ 		       <md-card-actions layout="row" layout-align="end center">
+            <!-- <md-button><a href="#/posts{[{post.url}]}">link</a></md-button> -->
+            </md-card-actions>
+          </a>
+      
+      </md-card>
+
+    </md-grid-tile>
+
+
+</md-grid-list>
