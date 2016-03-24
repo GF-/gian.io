@@ -21,7 +21,10 @@
     {{! Styles'n'Scripts }}
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0-rc7/angular-material.min.css">
     <link rel="stylesheet" type="text/css" href="{{asset "css/app.css"}}" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    
+    <!-- Google font -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" /> -->
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
@@ -35,22 +38,26 @@
 
                 <header flex="30" layout-padding layout-margin>
                     
-                   <div layout="row" layout-padding>
+                   <div layout="row">
+                   <!-- layout-padding -->
+                   
                         <!-- <div flex="none">
                             <img class="md-avatar" src="{{asset "img/gf.png"}}" style="border-radius: 50%;">
                         </div> -->
+                   
                         <div flex>
                           <h2 class="no-margin-bottom">{[{ user.name }]}</h2>
-                          <p class="no-margin-top">Ten years of experience in Design of Digital Products</p>
-                          <a href="#/contact">Contact me</a>
+                          <p class="no-margin-top">Design of Digital Products</p>
+                          <a data-icon="b" href="#/" title="Home"><span>Home</span></a>
+                          <a data-icon="d" href="#/contact" title="Send me a message"><span>Contact me</span></a>
+                          <a data-icon="c" href="https://www.linkedin.com/in/gianfrancopooli" target="_blank" title="My Linkedin profile"><span>Linkedin</span></a>
+                          <span class="copyright">&copy; {{date format="YYYY"}}</span>
                         </div>
                      </div>
 
-                    <section class="copyright"><a href="#/">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
-
                 </header>
 
-                <main ng-view flex="60" layout-padding layout-margin ng-cloak>
+                <main ng-view flex="60" layout-margin ng-cloak>
                 </main>
 
 

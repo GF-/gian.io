@@ -1,4 +1,4 @@
-<md-grid-list md-cols-gt-md="3" md-cols-sm="2" md-cols-md="3" md-row-height-gt-md="1:1" md-row-height="4:3" md-gutter-gt-md="1rem" md-gutter-gt-sm="8px" md-gutter="4px">
+<md-grid-list md-cols-gt-md="3" md-cols-xs="2" md-cols-sm="2" md-cols-md="3" md-row-height="1:1" md-gutter-gt-md="16px" md-gutter-gt-sm="8px" md-gutter="8px">
                         
 <!-- Big card
 <md-grid-tile md-colspan-gt-sm="2" md-rowspan-gt-sm="2" md-colspan-sm="2">
@@ -9,13 +9,14 @@
 
 <!--     <md-grid-tile ng-repeat="post in posts" ng-attr-md-colspan-gt-sm="{[{ post.featured ? '2' : '1' }]}" ng-attr-md-rowspan-gt-sm="{[{ post.featured ? '2' : '1' }]}" ng-attr-md-colspan-sm="{[{ post.featured ? '2' : '1' }]}" ng-cloak=""> -->
 
-    <md-grid-tile ng-repeat="post in posts" ng-attr-md-colspan-gt-sm="{[{ post.featured ? '2' : '1' }]}" ng-attr-md-rowspan="{[{ post.featured ? '2.5' : '1' }]}" ng-attr-md-colspan-sm="{[{ post.featured ? '2' : '1' }]}" ng-cloak="">
+    <md-grid-tile ng-repeat="post in posts" ng-attr-md-colspan-gt-sm="{[{ post.featured ? '2' : '1' }]}" ng-attr-md-rowspan="{[{ post.featured ? '2' : '1' }]}" ng-attr-md-colspan-sm="{[{ post.featured ? '2' : '1' }]}" ng-cloak="">
 
        
        <md-card layout-fill>
       
           <a href="#/posts{[{post.url}]}">
-		        <md-card-header>
+
+		        <md-card-header style="visibility: hidden; position: absolute;">
               <md-card-header-text>
           			<!-- <md-card-title>
           	          <md-card-title-text> -->

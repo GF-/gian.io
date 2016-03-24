@@ -1,11 +1,16 @@
        <md-card class="full">
         <md-card-title>
           <md-card-title-text>
+            
+            <!--
+            Not sure md-headline is the correct tag (wrong line-height, ..)
             <span class="md-headline"><h1>{[{ post.title }]}</h1></span>
-            <span class="md-subhead">Extra Large</span>
+            -->
+            <h1>{[{ post.title }]}</h1>
+            <!-- <span class="md-subhead"></span> -->
           </md-card-title-text>
         </md-card-title>
-        <md-card-content layout-align="space-between" ng-bind-html="post.html">
+        <md-card-content layout-align="space-between" ng-bind-html="post.html | unsafe">
           {[{ post }]}
         </md-card-content>
       </md-card>

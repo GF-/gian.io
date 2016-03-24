@@ -4,8 +4,10 @@ angular.module('gianio', [
   'ngRoute',
   'ngAnimate',
   'ngSanitize',
+  // Angular Material design and icons
   'ngMaterial',
   'ngMdIcons',
+  // Social share plugin
   '720kb.socialshare'
 ])
 
@@ -17,6 +19,7 @@ angular.module('gianio', [
   $routeProvider.otherwise({redirectTo: '/'});
 }])
 
+
 // Avoiding conflict with Handlebars, angular syntax is now {[{ this }]}
 .config(function($interpolateProvider) {
   $interpolateProvider.startSymbol('{[{');
@@ -27,89 +30,79 @@ angular.module('gianio', [
 // Angular Material theme config
 .config(function($mdThemingProvider) {
   $mdThemingProvider.theme('default')
-    .primaryPalette('deep-purple')
+    .primaryPalette('indigo')
     .accentPalette('pink')
     .warnPalette('red')
     .backgroundPalette('grey', {
-      'default': '50', // by default use shade 400 from the pink palette for primary intentions
-      'hue-1': '200', // use shade 100 for the <code>md-hue-1</code> class
-      'hue-2': '600', // use shade 600 for the <code>md-hue-2</code> class
-      'hue-3': 'A100' // use shade A100 for the <code>md-hue-3</code> class
+      'default': '50',
+      'hue-1': '200',
+      'hue-2': '600',
+      'hue-3': 'A100'
     });
 })
 
+// ng-bing-html strips some html attributes and tags, such as <video>.
+// $sce documentation https://docs.angularjs.org/api/ng/service/$sce
+// filter: http://stackoverflow.com/questions/18340872/how-do-you-use-sce-trustashtmlstring-to-replicate-ng-bind-html-unsafe-in-angu
+.filter('unsafe', function($sce) { return $sce.trustAsHtml; })
+
 // Calling Ghost JSON
+
+// Posts
 .controller('PostListCtrl', ['$scope', '$http',
   function ($scope, $http) {
     $http.get(
-
       ghost.url.api('posts', {
         limit: 'all'
       })
-
       ).success(function(data) {
       $scope.posts = data.posts;
-      // IMPORTANT /1
-      // = 'data.posts' instead of 'data' guarantees that we look into 'POSTS' on the JSON provided by Ghost. Important!
-      // console.log('Success!', data);
-      
-
+      // NOTE: 'data.posts' instead of 'data' guarantees that we look into 'POSTS' on the JSON provided by Ghost
     });
-
-    // $scope.orderProp = 'age';
   }])
 
+// Post
 .controller('PostDetailCtrl', ['$scope', '$routeParams', '$http',
   function($scope, $routeParams, $http) {
     $http.get(
-      
-      // 'posts/' + $routeParams.postUrl + '.json'
 
-        // No clue why this does not work
+        // The following should be working, but it does not. No clue why..
         // ghost.url.api('posts', {
         //   slug: 'welcome-to-ghost'
         // })
 
-        // This is a working alternative, as documented here http://api.ghost.org/docs/postsslugslug
+        // A working alternative, as documented here http://api.ghost.org/docs/postsslugslug
         ghost.url.api('posts/slug/' + $routeParams.postUrl)
-
       ).success(function(data) {
-    // $http.get('post-' + $routeParams.postId + '.json').success(function(data) {
+      // $http.get('post-' + $routeParams.postId + '.json').success(function(data) {
       $scope.post = data.posts[0];
-      // IMPORTANT /2
-      // [0] because:
-      // https://groups.google.com/forum/#!topic/angular/EaTWQu0wffA
-
+      // NOTE: "data.posts[0]" because https://groups.google.com/forum/#!topic/angular/EaTWQu0wffA
     });
   }])
 
-
-// Angular Material - Layout + sidenav
+// Author
 .controller('gianioCtrl', ['$scope', '$routeParams', '$http',
   function($scope, $routeParams, $http) {
-
     $http.get(
-
       ghost.url.api('users/1')
-
       ).success(function(data) {
       $scope.user = data.users[0];
-
     });
   }])
 
 
-// This is to make sure that the document scrolls on top at every change of location. Thank you http://www.ngroutes.com/questions/14149d0/changing-route-doesnt-scroll-to-top-in-the-new-page.html#7 */
-.run(["$rootScope", "$anchorScroll" , function ($rootScope, $anchorScroll) {
-  $rootScope.$on("$locationChangeSuccess", function() {
-      setTimeout($anchorScroll, 600); // It is delayed to allow the 'leave' animation to complete - otherwise there is a weird jump at the beginning of the animation
-  });
-}])
+// This is to make sure that the document scrolls on top at every change of location.
+// Thank you http://www.ngroutes.com/questions/14149d0/changing-route-doesnt-scroll-to-top-in-the-new-page.html#7
+// .run(["$rootScope", "$anchorScroll" , function ($rootScope, $anchorScroll) {
+//   $rootScope.$on("$locationChangeSuccess", function() {
+//       setTimeout($anchorScroll, 600); // It is delayed to allow the 'leave' animation to complete - otherwise there is a weird jump at the beginning of the animation
+//   });
+// }])
 
 
+// The following is about the contact form, I use formspree
 
 // Formspree
-
 .controller('MailControllerAjax',function($scope, $http, $mdToast) { 
 
   // Form
