@@ -36,7 +36,8 @@
 
             <div class="wrapper" layout="column" layout-sm="row" layout-fill flex="grow" >
 
-                <header flex="30" layout-padding layout-margin>
+                <header flex="20" flex-gt-md="10">
+                  <md-card layout-fill layout-padding layout-grow>
                     
                    <div layout="row">
                    <!-- layout-padding -->
@@ -57,9 +58,10 @@
 
                 </header>
 
-                <main ng-view flex="60" layout-margin ng-cloak>
+                <main flex="60" ng-cloak>
+                <!-- Didn't put ng-view on <main> to prevent jumps in animation when state changes -->
+                    <div ng-view></div>
                 </main>
-
 
             </div>
 

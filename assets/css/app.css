@@ -66,6 +66,19 @@ html {
   margin-top: 0;
 }
 
+/* Responsive images */
+img {
+  max-width: 100%;
+}
+
+/* Tables in posts */
+.table {
+  display: table;
+}
+  .table .cell {
+    vertical-align: top;
+  }
+
 
 
 /* Typography 
@@ -630,6 +643,7 @@ body {
     margin: 0;
   }
 
+
 }
 
 /* ===== == = === 20em (320px) === = == ===== */
@@ -661,6 +675,11 @@ body {
     max-height: 9rem !important;
   } /* This overrides definitions of Angular Material */
 
+  /* Responsive tables on post */
+    .table .cell {
+      display: table-cell;
+      width: 50%;
+    }
 
 
 }
@@ -684,21 +703,34 @@ body {
 
     header {
       order: 1;
-      position: fixed;
-      left: 70%;
-      height: auto;
-      max-height: 30% !important; /* This resets back definitions of Angular Material */
+      max-height: 100% !important; /* This resets back definitions of Angular Material */
+      position: relative;
     }
+      header md-card {
+        position: absolute; /*another way to stretch it vertically?*/
+      }
     main {
       order: 2;
-      position: absolute;
-      left: 10%;
-      width: 60%;
-      max-width: 60% !important;
+      max-height: 100% !important;
+      overflow-y: auto;
     }
-      main.layout-margin {
-        margin-top: 1.5rem;
+      
+      /* The following makes so there's no need for clumsy js autoscroll functions */
+      main,
+      main [ng-view] {
+        height: 100%;
+        max-height: 100%;
       }
+
+      .post {
+        max-height: 100%;
+        overflow-y: auto;
+      }
+
+  /* Responsive tables on post */
+    .table .cell {
+      width: 33%;
+    }
 
 }
 
@@ -707,21 +739,23 @@ body {
 
 @media only screen and (min-width : 75em) {
 
-  header {
-    left: 60%;
-  }
+  header { }
 
-  main {
-    left: 10%;
-    width: 50%;
-    max-width: 50%;
-  }
+  main { }
 
 }
 
 /* ===== == = === 81.25em (1300px) === = == ===== */
 
-@media only screen and (min-width : 81.25em) {}
+@media only screen and (min-width : 81.25em) {
+
+  md-grid-list {
+    margin: 1.5rem !important;  /* Not achievable with angular material tools, 1.1.0 RC1 */
+  }
+
+
+
+}
 
 /* ===== == = === 100em (1600px) === = == ===== */
 

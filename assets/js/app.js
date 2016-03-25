@@ -91,13 +91,15 @@ angular.module('gianio', [
   }])
 
 
-// This is to make sure that the document scrolls on top at every change of location.
-// Thank you http://www.ngroutes.com/questions/14149d0/changing-route-doesnt-scroll-to-top-in-the-new-page.html#7
+// This is a way to scroll the window on top at every route change;
+// I don't use it anymore as I find a more elegant CSS solution: using blocks 100% height with overscroll: auto; no JS solutions needed.
+// This solution below comes from http://www.ngroutes.com/questions/14149d0/changing-route-doesnt-scroll-to-top-in-the-new-page.html#7
 // .run(["$rootScope", "$anchorScroll" , function ($rootScope, $anchorScroll) {
 //   $rootScope.$on("$locationChangeSuccess", function() {
 //       setTimeout($anchorScroll, 600); // It is delayed to allow the 'leave' animation to complete - otherwise there is a weird jump at the beginning of the animation
 //   });
 // }])
+// Another way is to set ng-view autoscroll="true", but it jumps on top after the animation ends - resulting in a not nice transition
 
 
 // The following is about the contact form, I use formspree
